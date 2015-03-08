@@ -1,0 +1,24 @@
+{
+  "name": "spotify-atom-shell",
+  "version": "1.0.0",
+  "description": "React/Atom Shell/Spotify demo app",
+  "main": "src/bootstrap.js",
+  "scripts": {
+    "link-client": "ln -sf $(./scripts/fullpath src/client) node_modules/client",
+    "start": "npm run link-client && ./build/Atom.app/Contents/MacOS/Atom ."
+  },
+  "author": "BinaryMuse",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^4.7.3",
+    "css-loader": "^0.9.1",
+    "fluxxor": "^1.5.2",
+    "less": "^2.4.0",
+    "less-loader": "^2.1.0",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
+    "style-loader": "^0.8.3",
+    "superagent": "^0.21.0"
+  },
+  "private": true
+}
