@@ -13,7 +13,9 @@ const types = keyMirror({
   },
 
   NAVIGATION: {
-    SHOW: null
+    GO_BACK: null,
+    GO_FORWARD: null,
+    GO: null
   }
 });
 
@@ -53,16 +55,24 @@ const methods = {
   },
 
   navigation: {
+    goBack() {
+      this.dispatch(c.NAVIGATION.GO_BACK);
+    },
+
+    goForward() {
+      this.dispatch(c.NAVIGATION.GO_FORWARD);
+    },
+
     showNewReleases() {
-      this.dispatch(c.NAVIGATION.SHOW, {type: 'new-releases'});
+      this.dispatch(c.NAVIGATION.GO, {name: 'new-releases'});
     },
 
     showAlbum(albumId) {
-      this.dispatch(c.NAVIGATION.SHOW, {type: 'album', id: albumId});
+      this.dispatch(c.NAVIGATION.GO, {name: 'album', params: {albumId}});
     },
 
     showArtist(artistId) {
-      this.dispatch(c.NAVIGATION.SHOW, {type: 'artist', id: artistId});
+      this.dispatch(c.NAVIGATION.GO, {name: 'artist', params: {artistId}});
     }
   }
 };

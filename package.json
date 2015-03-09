@@ -4,7 +4,7 @@
   "description": "React/Atom Shell/Spotify demo app",
   "main": "src/bootstrap.js",
   "scripts": {
-    "link-client": "ln -sf $(./scripts/fullpath src/client) node_modules/client",
+    "link-client": "rm node_modules/client ; ln -sf $(./scripts/fullpath src/client) node_modules/client",
     "start": "npm run link-client && ./build/Atom.app/Contents/MacOS/Atom ."
   },
   "author": "BinaryMuse",
@@ -15,8 +15,10 @@
     "fluxxor": "^1.5.2",
     "less": "^2.4.0",
     "less-loader": "^2.1.0",
+    "node-spotify": "^0.7.1",
     "object-assign": "^2.0.0",
     "react": "^0.12.2",
+    "react-router": "^0.12.4",
     "style-loader": "^0.8.3",
     "superagent": "^0.21.0"
   },

@@ -49,6 +49,39 @@ a:hover {
   text-decoration: underline;
 }
 
+table.track-list {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border-bottom: 2px solid #222326;
+    line-height: 24pt;
+  }
+
+  tr:hover {
+    background-color: #222326;
+  }
+
+  th {
+    text-align: left;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 12pt;
+    color: #88898c;
+  }
+
+  td {
+    min-width: 40px;
+    color: #88898c;
+  }
+
+  .col-track_name {
+    width: 100%;
+    color: white;
+  }
+}
+
 .top-bar-container {
   border-bottom: 1px solid #393b40;
   height: 50px;
@@ -72,9 +105,6 @@ a:hover {
   overflow: scroll;
 }
 
-.main-panel {
-}
-
 .playback-bar-container {
   border-top: 1px solid #393b40;
   z-index: 1;
@@ -82,6 +112,19 @@ a:hover {
 
 .playback-bar {
   height: 50px;
+}
+
+.album-details-container {
+  border-top: 2px solid #222326;
+  border-bottom: 2px solid #222326;
+  line-height: 24pt;
+  padding: 5px 10px 15px 10px;
+  margin: 20px 10px;
+  color: #86878a;
+
+  a {
+    color: white;
+  }
 }
 
 .album-card {

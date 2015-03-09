@@ -5,6 +5,7 @@ import { Flex, Block, Inline, InlineBlock } from "client/components/layout";
 import { LOADING_TOKEN as NewReleasesLoadingToken } from "client/stores/new_releases";
 
 import AlbumCard from "client/components/widgets/album_card";
+import LoadingIndicator from "client/components/widgets/loading_indicator";
 
 const NewReleasesPage = React.createClass({
   mixins: [FluxMixin(React), StoreWatchMixin("newReleases", "albums")],
@@ -42,7 +43,7 @@ const NewReleasesPage = React.createClass({
   },
 
   renderLoading() {
-    return <div>Loading...</div>;
+    return <LoadingIndicator />;
   },
 
   renderNewReleases() {

@@ -1,8 +1,11 @@
 import React from "react";
 import { Block, Inline, InlineBlock } from "client/components/layout";
+import { Link, Navigation } from "react-router";
 import CoverImage from "client/components/widgets/cover_image";
 
 const AlbumCard = React.createClass({
+  mixins: [Navigation],
+
   propTypes: {
     image: React.PropTypes.string.isRequired,
     album: React.PropTypes.shape({
@@ -36,16 +39,16 @@ const AlbumCard = React.createClass({
         </Block>
         <Block className="info-portion" style={{height: 65}}>
           <Block className="album-link-container">
-            <a href='#' onClick={this.onAlbumClick}>
+            <Link to="album" params={{albumId: this.props.album.id}}>
               {this.props.album.name}
-            </a>
+            </Link>
           </Block>
           {
             this.props.artist ?
             <Block className="artist-link-container">
-            <a href='#' onClick={this.onArtistClick}>
+            <Link to="artist" params={{artistId: this.props.artist.id}}>
               {this.props.artist.name}
-            </a>
+            </Link>
             </Block> :
             null
           }
@@ -56,12 +59,12 @@ const AlbumCard = React.createClass({
 
   onAlbumClick(evt) {
     evt.preventDefault();
-    this.props.onAlbumClick(this.props.album.id);
+    this.transitionTo("album", {albumId: this.props.album.id});
   },
 
   onArtistClick(evt) {
     evt.preventDefault();
-    this.props.onArtistClick(this.props.artist.id);
+    this.transitionTo("artist", {albumId: this.props.artist.id});
   }
 });
 
