@@ -1,10 +1,9 @@
 import request from "superagent";
 
-// TODO: remove
-const clientId = "055544b8efb949d99e14f45e0cf2df12",
-      clientSecret = "ea93616a51a341bdaebe778cd4bd1ea4";
+import credentials from "./credentials.json";
 
-const base64auth = new Buffer(`${clientId}:${clientSecret}`).toString("base64");
+const { clientId, clientSecret } = credentials,
+      base64auth = new Buffer(`${clientId}:${clientSecret}`).toString("base64");
 
 const doReq = (req) => {
   return new Promise((resolve, reject) => {
