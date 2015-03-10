@@ -37,7 +37,7 @@ const methods = {
 
       this.dispatch(c.NEW_RELEASES.SUCCESS, {releases: data});
 
-      while (data.albums.next && page < 1) {
+      while (data.albums.next && page < 5) {
         page++;
         data = await client.get(data.albums.next);
         albumIds = data.albums.items.map((album) => album.id);
