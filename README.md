@@ -1,10 +1,15 @@
 React/Atom Shell/Spotify
 ========================
 
-TODO
+This project explores creating a desktop app using Atom Shell. The application is built using React, Fluxxor, and Babel. ES6 and ES7 faetures are used heavily.
 
 Instructions
 ------------
+
+Requirements:
+
+* Node.js installed
+* [`apm`](https://github.com/atom/apm) command-line tool available
 
 Currently OS X specific:
 
